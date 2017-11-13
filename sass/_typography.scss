@@ -1,0 +1,128 @@
+html,
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 100%;
+	font-family: "ff-tisa-web-pro", sans-serif;
+	color:$color-darkerGray;
+
+	@media(max-width: 768px ) {
+		font-size:85%;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: "brandon-grotesque", serif;
+		font-weight:500;
+		font-style:normal;
+		line-height:1.2;
+		letter-spacing: -.05rem;
+		color:$color-darkerGray;
+
+		&.white {
+			color:$color-white;
+		}
+
+		&.centered {
+			text-align: center;
+		}
+	}
+
+	h1 {
+		font-size: 4rem;
+	}
+
+	h2 {
+		font-size: 2rem;
+		margin-top: calc(#{$gutter}*2);
+	}
+
+	h3 {
+		font-size: 2rem;
+	}
+
+	h4 {
+		font-size: 2rem;
+	}
+
+	h5 {
+		font-size: 2rem;
+	}
+
+	h6 {
+		font-size: 2rem;
+	}
+
+	ul,
+	ol {
+		margin:0;
+		padding:0;
+	}
+
+	p {
+		display:block;
+		font-family: "ff-tisa-web-pro", serif;
+		font-weight: 400;
+		font-style:normal;
+		font-size:1.25rem;
+		line-height:1.5;
+		margin:0;
+		margin-bottom: 2rem;
+		color:$color-darkerGray;
+		min-height:1px;
+
+		&.white {
+			color:$color-white;
+		}
+
+		&.centered {
+			text-align: center;
+		}
+
+		&.divider {
+			width:100%;
+			height:2px;
+			margin:2.5rem 0;
+			background:$color-lighterGray;
+		}
+	}
+
+	a,
+	a:visited {
+		color: $color-link;
+		text-decoration: none;
+	}
+
+	a {
+
+		&.button {
+			display:inline-block;
+			width:auto;
+			background: $color-link;
+			color:$color-white;
+			font-family: "brandon-grotesque", sans-serif;
+			text-transform: uppercase;
+			letter-spacing: .025rem;
+			font-size:1rem;
+			line-height:1;
+			font-weight:500;
+			padding: calc(#{$gutter}/2) $gutter;
+			cursor:pointer;
+			margin-top: calc(#{$gutter}/3);
+			@include border-radius(35px);
+			@include transition(all .15s);
+
+			&:hover {
+				background: $color-linkDarker;
+			}
+
+			&:active {
+				background: darken($color-link, 15%);
+			}
+		}
+	}
+}

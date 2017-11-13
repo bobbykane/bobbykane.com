@@ -1,0 +1,55 @@
+@mixin bp($point) {
+	@if $point == bp-2xl {
+		@media #{$bp-2xl} { @content; }
+	}
+	@else if $point == bp-xl {
+		@media #{$bp-xl} { @content; }
+	}
+	@else if $point == bp-lg {
+		@media #{$bp-lg} { @content; }
+	}
+	@else if $point == bp-md {
+		@media #{$bp-md} { @content; }
+	}
+	@else if $point == bp-sm {
+		@media #{$bp-sm} { @content; }
+	}
+	@else if $point == bp-xs {
+		@media #{$bp-sm} { @content; }
+	}
+	@else if $point == bp-2xs {
+		@media #{$bp-2xs} { @content; }
+	}
+	@else if $point == bp-3xs {
+		@media #{$bp-3xs} { @content; }
+	}
+}
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+@mixin border-radius($border-radius) {
+	-webkit-border-radius: $border-radius;
+	border-radius: $border-radius;
+}
+
+@mixin transition($transition) {
+	-webkit-transition: $transition ease-in-out;
+	-moz-transition: $transition ease-in-out;
+	-ms-transition: $transition ease-in-out;
+	-o-transition: $transition ease-in-out;
+	transition: $transition ease-in-out;
+}
+
+@mixin box-shadow($box-shadow) {
+	-webkit-box-shadow: $box-shadow;
+	box-shadow: $box-shadow;
+}

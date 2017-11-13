@@ -1,0 +1,48 @@
+// Container Width
+$containerWidth: 1920px;
+
+// Column Width
+$columnWidth: percentage(1/12);
+
+// Margins
+$gutter: 30px;
+
+// Resonsive BPs
+$bp-2xl: 	"(min-width: 1921px)";
+$bp-xl: 	"(min-width: 1441px)";
+$bp-lg: 	"(min-width: 1281px)";
+$bp-md: 	"(min-width: 1025px)";
+$bp-sm: 	"(min-width: 769px)";
+$bp-xs: 	"(min-width: 415px)";
+$bp-2xs: 	"(min-width: 376px)";
+$bp-3xs: 	"(min-width: 321px)";
+
+$bp-2xl-px:	"1920px";
+$bp-xl-px:	"1440px";
+$bp-lg-px:	"1280px";
+$bp-md-px:	"1024px";
+$bp-sm-px:	"768px";
+$bp-xs-px:	"414px";
+$bp-2xs-px:	"375px";
+$bp-3xs-px:	"320px";
+
+
+// Colors
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-lightestGray: #f8f8f8;
+$color-lighterGray: #eee;
+$color-lightGray: #ddd;
+$color-gray: #888;
+$color-darkGray: #666;
+$color-darkerGray: #333;
+
+$color-link: #65b1cd;
+$color-linkDarker: darken($color-link, 10%);
+$color-linkDarkest: darken($color-link, 25%);
+
+$color-twitter: rgb(85,172,238);
+$color-dribbble: rgb(234,76,137);
+$color-linkedin: rgb(0,119,181);
+$color-flickr: rgb(45,17,82);

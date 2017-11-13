@@ -1,0 +1,13 @@
+footer {
+	background: $color-darkerGray;
+
+	.container {
+		padding: calc(#{$gutter}*2);
+
+		p {
+			font-family: "brandon-grotesque", sans-serif;
+			margin: 0;
+			color:$color-gray;
+		}
+	}
+}
