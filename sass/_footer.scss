@@ -1,13 +1,93 @@
 footer {
-	background: $color-darkerGray;
+    @include row();
+    min-width: 320px;
+    background: $color-slate;
+    margin: 0;
+    padding: 30px 0;
 
-	.container {
-		padding: calc(#{$gutter}*2);
+    .wrap {
+        @include column(10/12, $offset: 1/12);
+        text-align: center;
 
-		p {
-			font-family: "brandon-grotesque", sans-serif;
-			margin: 0;
-			color:$color-gray;
-		}
-	}
+        @media(max-width: 500px) {
+            @include center(100%, 15px);
+        }
+
+        .social {
+            @include row();
+            display: block;
+            font-size: 0;
+
+            a {
+                display: inline-block;
+                color: $color-grayLight;
+                width: 100px;
+                height: 100px;
+                font-size: 36px;
+                font-height: 100px;
+                padding: 25px 0;
+                text-decoration: none;
+                margin: 0px;
+                cursor: pointer;
+
+                @media( max-width: 620px ) {
+                    @include column(1/5, $cycle: 5);
+                    font-size: 30px;
+                }
+
+                &:visited {
+                    color: $color-grayLight;
+                }
+
+                &:hover {
+                    background: $color-slateDark;
+                }
+            }
+        }
+
+        .cred {
+            .logo {
+
+                a {
+                    display: block;
+                    margin: 0 auto;
+                    padding: 0;
+                    text-align: center;
+                    font-family: "Source Sans Pro";
+                    color: $color-slate;
+                    font-size: 18px;
+                    line-height: 40px;
+                    font-weight: 700;
+                    background: $color-white;
+                    width: 40px;
+                    height: 40px;
+                    text-decoration: none;
+                    @include border-radius(50%);
+                    @include transition(all .15s ease-in-out);
+
+                    &:hover {
+                        color: $color-white;
+                        background: $color-blue-link;
+                    }
+
+                    &:visited {
+                        color: $color-slate;
+                    }
+                }
+            }
+
+            p {
+                font-family: "Source Sans Pro";
+                font-weight: 300;
+                line-height: 1.5;
+                letter-spacing: .0125em;
+                color: #888888;
+
+                a {
+                    color: $color-grayLight;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
 }

@@ -1,0 +1,40 @@
+.ad-simple {
+	@include row();
+	max-width: 380px;
+	min-width: 320px;
+	background: $color-grayLightest;
+	padding: $spacing $spacing calc(#{$spacing*.75}) $spacing;
+	margin: $spacing 0;
+	text-align: left;
+
+	&.inverse {
+		background: none;
+		border: 1px solid rgba(255, 255, 255, .5);
+
+		a.text {
+			color: $color-white;
+		}
+	}
+
+	a {
+		display: block;
+		@include clearfix();
+
+		&.img {
+			float: left;
+			margin-right: $spacing/2;
+		}
+
+		&.text {
+			font-family: "Source Sans Pro";
+			text-decoration: none;
+		    line-height: 130%;
+		    min-width: 120px;
+		    white-space: normal;
+		}
+	}
+
+    &.designerTalk {
+        
+    }
+}

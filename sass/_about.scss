@@ -1,0 +1,48 @@
+section.about {
+    @include center();
+
+    .aboutText {
+        @include container();
+
+        p.social {
+
+            a {
+                color: white;
+                margin:0 .5em;
+
+                &:first-child {
+                    margin-left:0;
+                }
+
+                span {
+                    height:49px;
+                    width:49px;
+                    padding: 16px;
+                    @include border-radius(50px);
+                    background: $color-blue-link;
+
+                    @media( max-width:768px ) {
+                        height:46px;
+                        width:46px;
+                    }
+
+                    &.fa-twitter {
+                        background: $color-twitter;
+                    }
+
+                    &.fa-dribbble {
+                        background: $color-dribbble;
+                    }
+
+                    &.fa-linkedin {
+                        background: $color-linkedin;
+                    }
+
+                    &.fa-flickr {
+                        background: $color-flickr;
+                    }
+                }
+            }
+        }
+    }
+}

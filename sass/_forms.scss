@@ -1,243 +1,167 @@
 form {
-	@extend .row;
+    @include row();
 
-	input,
-	textarea,
-	select {
-		display:block;
-		padding: calc(#{$gutter}/2);
-		@include border-radius(0px);
-		width: 100%;
-		outline: none;
-		border: 1px solid $color-lightGray;
-		background:$color-white;
-		margin-bottom: calc(#{$gutter}/2) !important;
-		font-family: "brandon-grotesque", sans-serif;
-		font-size:1.25rem;
-		color:$color-darkerGray;
-		@include transition(all .15s);
+    input,
+    textarea,
+    select {
+        display:block;
+        padding: calc(#{$spacing}/2);
+        @include border-radius(0px);
+        width: 100%;
+        outline: none;
+        border: 1px solid $color-grayLight;
+        background:$color-white;
+        margin-bottom: calc(#{$spacing}*1.5) !important;
+        font-family: "Source Sans Pro", sans-serif;
+        font-weight: 300;
+        font-size:1.25rem;
+        color:$color-grayDarker;
+        @include transition(all .15s);
 
-		&.error {
-			border-color: red;
-		}
+        &.error {
+            @include box-shadow(inset 0px 0px 0px 1px $color-red);
+            border-color: $color-red;
 
-	}
+            &:focus {
+                border-color: $color-red;
+            }
+        }
 
-	input[type="submit"] {
-		@extend a.button;
-		width:auto;
-		margin: 0 auto;
-		border:none;
-	}
+        &.valid {
+            @include box-shadow(inset 0px 0px 0px 1px $color-green);
+            border-color: $color-green;
 
-	select {
-		height:60px;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
+            &:focus {
+                border-color: $color-green;
+            }
+        }
 
-		option[disabled="disabled"] {
-			color: $color-lightGray!important;
-		}
-	}
+        &:focus,
+        &:active {
+            border-color: $color-slate;
+        }
 
-	.group {
-		@extend .row;
-		display:block;
-		margin: 0 0 calc(#{$gutter}/2) 0;
+    }
 
-		label {
-			font-size:1.25rem;
-			color:$color-gray;
-			@include transition(all .15s);
-			display: block;
-			margin:0 0 calc(#{$gutter}/3) 0;
-			@include transition(all .15s);
+    input[type="submit"] {
+        border: none;
+    }
 
-			&.focused {
-				color:$color-darkerGray;
-			}
+    select {
+        height:60px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
 
-			&.error {
-				position: absolute;
-				bottom: -40px;
-				right: 0px;
-				font-size: .85rem;
-				color: red;
-			}
-		}
+        option[disabled="disabled"] {
+            color: $color-grayLight!important;
+        }
+    }
 
-		&:hover {
+    .group {
+        @include row();
+        display:block;
+        margin: 0 0 calc(#{$spacing}/2) 0;
 
-			&> label {
-				color:$color-darkerGray;
-			}
+        label {
+            font-family: "Source Sans Pro";
+            font-weight: 700;
+            font-size:14px;
+            text-transform: uppercase;
+            color:$color-gray;
+            display: block;
+            margin:0 0 calc(#{$spacing}/2) 0;
+            @include transition(all .15s);
 
-			&> input,
-			&> textarea,
-			&> select {
-				border-color:$color-gray;
+            &.focused {
+                color:$color-grayDarker;
+            }
+        }
 
-				&.error {
-					border-color: red;
-				}
-			}
+        &:hover {
 
-			&>input[type="submit"] {
-				border:none;
-			}
+            &> label {
+                color:$color-grayDarker;
+            }
 
-			.row {
+            &> input,
+            &> textarea,
+            &> select {
+                //border-color:$color-grayDark;
 
-				&> input {
-					border-color: $color-darkerGray;
-				}
-			}
-		}
+                &.error {
+                    border-color: $color-red;
 
-		.row {
+                    &:focus {
+                        border-color: $color-red;
+                    }
+                }
 
-			&.focused {
+                &.valid {
+                    border-color: $color-green;
 
-				label {
-					color:$color-darkerGray;
-				}
+                    &:focus {
+                        border-color: $color-green;
+                    }
+                }
+            }
 
-				input,
-				textarea,
-				select {
-					border-color: $color-darkGray;
+            &>input[type="submit"] {
+                border:none;
+            }
 
-					&.error {
-						border-color: red;
-					}
-				}
+            .row {
 
-				&.selectInput {
+                &> input {
+                    border-color: $color-grayDarker;
+                }
+            }
+        }
 
-					&:after {
-						border-top-color:$color-darkerGray;
+        &.selectInput {
+            margin-bottom: $spacing;
 
-						&.error {
-							border-color: red;
-						}
-					}
-				}
-			}
-		}
+            &:after {
+                display: block;
+                content: '';
+                position: absolute;
+                bottom: 27px;
+                right: 18px;
+                z-index: 999;
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 7px solid $color-gray;
+            }
+        }
 
-		&.selectInput {
-			margin-bottom: $gutter;
+        &.focused {
 
-			&:after {
-				display: block;
-				content: '';
-				position: absolute;
-				bottom: 27px;
-				right: 18px;
-				z-index: 999;
-				width: 0;
-				height: 0;
-				border-left: 5px solid transparent;
-				border-right: 5px solid transparent;
-				border-top: 7px solid $color-gray;
-			}
+            label {
+                color:$color-grayDark;
+            }
 
-			&.budget {
-				display:none;
-			}
-		}
+            input,
+            textarea,
+            select {
+                border-color: $color-grayDark;
 
-		&.focused {
+                &.error {
+                    border-color: red;
+                }
+            }
 
-			label {
-				color:$color-darkerGray;
-			}
+            &.selectInput {
 
-			input,
-			textarea,
-			select {
-				border-color: $color-darkGray;
+                &:after {
+                    border-top-color:$color-grayDarker;
 
-				&.error {
-					border-color: red;
-				}
-			}
-
-			&.selectInput {
-
-				&:after {
-					border-top-color:$color-darkerGray;
-
-					&.error {
-						border-color: red;
-					}
-				}
-			}
-		}
-	}
-
-	.loader {
-		margin: 12px 0 0 5px;
-		display: none;
-		
-		span {
-			display: inline-block;
-			vertical-align: middle;
-			width: 10px;
-			height: 10px;
-			margin-right: 3px;
-			-webkit-transform: scale(0.3);
-			transform: scale(0.3);
-			@include border-radius(50%);
-			background: $color-link;
-			-webkit-animation: ptr-loader .4s infinite alternate;
-			animation: ptr-loader .4s infinite alternate;
-
-			&#l1 {
-				-webkit-animation-delay: 0;
-				animation-delay: 0;
-			}
-
-			&#l2 {
-				-webkit-animation-delay: 0.2s;
-				animation-delay: 0.2s;
-			}
-
-			&#l3 {
-				-webkit-animation-delay: 0.4s;
-				animation-delay: 0.4s;
-			}
-		}
-		
-		@-webkit-keyframes ptr-loader {
-			0% {
-				-webkit-transform: translateY(0) scale(0.3);
-				transform: translateY(0) scale(0.3);
-				opacity: 0;
-			}
-
-			100% {
-				-webkit-transform: scale(1);
-				transform: scale(1);
-				background-color: $color-link;
-				opacity: 1;
-			}
-		}
-
-		@keyframes ptr-loader {
-			0% {
-				-webkit-transform: translateY(0) scale(0.3);
-				transform: translateY(0) scale(0.3);
-				opacity: 0;
-			}
-
-			100% {
-				-webkit-transform: scale(1);
-				transform: scale(1);
-				background-color: $color-link;
-				opacity: 1;
-			}
-		}
-	}
+                    &.error {
+                        border-color: red;
+                    }
+                }
+            }
+        }
+    }
 }
