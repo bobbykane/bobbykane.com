@@ -14,7 +14,8 @@
 
 <body class="home">
 	<?php require "tpls/_navigation.php"; ?>
-	<?php require "tpls/_videoIntro.php"; ?>
+	<?php require "tpls/_home.php"; ?>
+	<?php require "tpls/_footer.php"; ?>
 	<?php require "tpls/_js.php"; ?>
 </body>
 </html>

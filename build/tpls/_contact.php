@@ -1,7 +1,7 @@
 <section class="contact">
     <div class="pageWrap">
         <h1>Let's Talk</h1>
-        <p class="centered">Whether you have a project you're looking to chat about, or just want to see what I'm up to; this form puts you at the top of my inbox - seriously.</p>
+        <p class="centered">Whether you have a project you're looking to chat about, or just want to see what I'm up to; <strong>this form puts you at the top of my inbox</strong> - seriously.</p>
         <form id="work" action="http://formspree.io/hi@bobbykane.com" method="POST">
             <div class="group">
                 <label>Name*</label>

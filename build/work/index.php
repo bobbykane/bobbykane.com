@@ -11,7 +11,7 @@
     <?php require("../tpls/_head.php"); ?>
 </head>
 
-<body>
+<body class="work">
     <?php require "../tpls/_navigation.php"; ?>
     <?php require "../tpls/_work.php"; ?>
     <?php require "../tpls/_footer.php"; ?>

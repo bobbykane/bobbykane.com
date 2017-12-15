@@ -3,6 +3,10 @@ section.contact {
 
     .pageWrap {
 
+        h4 {
+            @extend .centered;
+        }
+
         p.social {
             @include row();
 

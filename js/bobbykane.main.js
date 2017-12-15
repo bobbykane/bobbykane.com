@@ -34,6 +34,7 @@ $(".hamburger").on("click", function(e) {
     }
 });
 
+/*
 var isMobile = false;
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
     var isMobile = true;
@@ -42,9 +43,24 @@ if ( isMobile === true) {
     $(".videoWrap").remove();
     $(".videoIntro").addClass("homeVideoPlaceholder");
 }
+*/
+
+function jribbbleHome() {
+    $.jribbble.setToken('b9b2f29b9772736585b33bfa5626bc2d446e6fd502fbdf8a7280c63ac5fbfbf6');
+    $.jribbble.users('bobbykane').shots({per_page: 3}).then(function(shots) {
+        var html = [];
+        shots.forEach(function(shot) {
+            html.push('<li class="shots--shot">');
+            html.push('<a href="' + shot.html_url + '" target="_blank">');
+            html.push('<img src="' + shot.images.hidpi + '">');
+            html.push('</a></li>');
+        });
+        $('.shots').html(html.join(''));
+    });
+}
 
 function jribbbleWork() {
-	$.jribbble.setToken('b9b2f29b9772736585b33bfa5626bc2d446e6fd502fbdf8a7280c63ac5fbfbf6');
+    $.jribbble.setToken('b9b2f29b9772736585b33bfa5626bc2d446e6fd502fbdf8a7280c63ac5fbfbf6');
     $.jribbble.users('bobbykane').shots({per_page: 30}).then(function(shots) {
         var html = [];
         shots.forEach(function(shot) {
@@ -56,18 +72,26 @@ function jribbbleWork() {
         $('.shots').html(html.join(''));
     });
 }
-if ( $("ul.shots").length ) {
-    jribbbleWork();
+if ($("body").is(".home") ) {
+    if ( $("ul.shots").length ) {
+        jribbbleHome();
+    }
+}
+
+if ($("body").is(".work") ) {
+    if ( $("ul.shots").length ) {
+        jribbbleWork();
+    }
 }
 
 $("form#work input[type='text']:first-of-type").focus();
 $("select#subject").change(function() {
-	if ( $(this).val() === "Discuss a project" ) {
-		$(".group.budget, .group.projectName, .group.projectTimeline").fadeIn();
-	} else {
-		$(".group.budget, .group.projectName, .group.projectTimeline").fadeOut();
-	}
-	return false;
+    if ( $(this).val() === "Discuss a project" ) {
+        $(".group.budget, .group.projectName, .group.projectTimeline").fadeIn();
+    } else {
+        $(".group.budget, .group.projectName, .group.projectTimeline").fadeOut();
+    }
+    return false;
 });
 // Validate Form
 $("form#work").validate({
@@ -81,12 +105,12 @@ $("form#work").validate({
         Subject: "required",
         Tell_me_about_it: "required",
         Project_Name: {
-        	required: function(element) {
+            required: function(element) {
                 return $("#subject").val() === "Discuss a project";
             }
         },
         Project_Timeline: {
-        	required: function(element) {
+            required: function(element) {
                 return $("#subject").val() === "Discuss a project";
             }
         },

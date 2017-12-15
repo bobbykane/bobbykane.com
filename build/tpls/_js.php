@@ -1,4 +1,4 @@
-    <script src="/js/bobbykane.main-1.0.0.min.js"></script>
+    <script src="/js/bobbykane.main.min.js"></script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

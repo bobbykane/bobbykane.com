@@ -17,8 +17,8 @@
     <meta name="twitter:domain" content="bobbykane.com">
     <meta name="twitter:site" content="@bobbyjkane">
 
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700|Merriweather:400,400i,700,700i" rel="stylesheet">
-    <link rel="stylesheet" href="/css/bobbykane.main-1.0.0.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700|Merriweather:300,300i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bobbykane.main.min.css">
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
     <link rel="icon" href="/images/favicon.ico">
 
@@ -28,6 +28,6 @@
         $link_twitter =     'http://twitter.com/bobbyjkane/?ref=bobbykane.com';
         $link_dribbble =    'http://dribbble.com/bobbykane/?ref=bobbykane.com';
         $link_linkedin =    'http://linkedin.com/in/bobbyjkane/?ref=bobbykane.com';
-        $link_instagram =   'http://instagram.com/bobby.j.kane/?ref=bobbykane.com';
+        $link_instagram =   'http://instagram.com/bobbykane/?ref=bobbykane.com';
         $link_flickr =      'http://flickr.com/bobbyjkane/?ref=bobbykane.com';
     ?>

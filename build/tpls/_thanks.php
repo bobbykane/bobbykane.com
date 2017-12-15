@@ -8,7 +8,7 @@
             NAILED IT!
         </div>
         <h1>Sounds good, I'll get back to you soon!</h1>
-        <h3 class="centered">And while you wait, you can check out some cool videos...</h3>
+        <h4>And while you wait, you can check out some cool videos...</h4>
         <p class="social centered">
             <div class="videoWrapper">
                 <iframe class="waiting" src="https://www.youtube.com/embed/I3RUflwPlH8?rel=0&amp;showinfo=0" frameborder="0" 
